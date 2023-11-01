@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+
 <html lang="en">
 
 <head>
@@ -30,43 +31,63 @@
     }
 
     .fill {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
+      padding: 2%;
       color: #fff;
       outline: 0;
+      border: 2px solid black;
       cursor: pointer;
       position: relative;
+      background-color: rgba(0, 0, 0, 0);
       margin: 5px;
-      background-color: #4b4b4b;
     }
+
+    .fill::after {
+      content: "";
+      width: 100%;
+      z-index: -1;
+      position: absolute;
+      height: 100%;
+      top: 5px;
+      left: 5px;
+      transition: 0.2s;
+    }
+
+    .fill:hover::after {
+      top: 0px;
+      left: 0px;
+    }
+
 
     .icon {
       font-size: 1em;
     }
 
-    .blog:hover{
+    .blog:hover,
+    .blog::after {
       background-color: #ffbd2f;
     }
 
-    .email:hover{
+    .email:hover,
+    .email::after {
       background-color: #23c8c8;
     }
 
 
-    .instagram:hover{
+    .instagram:hover,
+    .instagram::after {
       background: #f86ee1;
     }
 
-    .linkedin:hover{
+    .linkedin:hover,
+    .linkedin::after {
       background-color: #0e76a8;
     }
 
 
-
-    .youtube:hover{
+    .youtube:hover,
+    .youtube::after {
       background-color: #FF0000;
     }
 
@@ -112,19 +133,18 @@
       <!-- End instagram Icon -->
 
 
-      <!-- Start linkedin Icon -->
-      <div id="linkedin" onclick="navigate(this.id)" class="fill linkedin">
-        <span class="icon"><i class="fab fa-linkedin"></i></span>
-      </div>
-      <!-- End linkedin Icon -->
-      
-
       <!-- Start youtube Icon -->
       <div id="youtube" onclick="navigate(this.id)" class="fill youtube">
         <span class="icon"><i class="fab fa-youtube"></i></span>
       </div>
       <!-- End youtube Icon -->
 
+    
+      <!-- Start linkedin Icon -->
+      <div id="linkedin" onclick="navigate(this.id)" class="fill linkedin">
+        <span class="icon"><i class="fab fa-linkedin"></i></span>
+      </div>
+      <!-- End linkedin Icon -->
 
 
     </div>
@@ -138,20 +158,22 @@
         //if you want the URL to open in the same window use '_parent'  instead of '_blank'
 
         if (id === "blog")
-          window.open("https://www.notion.so/fracture", '_blank').focus(); //Add the url to your blog
+          window.open("https://notion.so/fracture", '_blank').focus();
 
         else if (id === "email") {
-          window.open("mailto:mt.bsnss@gmail.com", '_blank').focus(); //Add your email after "mailto:""
-        }
+          window.open("mt.bsnss@gmail.com", '_blank').focus();
+
         else if (id === "instagram") {
-          window.open("instagram.com/tremolo_truong", '_blank').focus(); //Add the url to your instagram account
+          window.open("instagram.com", '_blank').focus();
         }
         else if (id === "linkedin") {
-          window.open("https://www.linkedin.com/in/tremolo", '_blank').focus(); //Add the url to your pinterest account
+          window.open("https://www.linkedin.com/", '_blank').focus();
         }
         else if (id === "youtube") {
-          window.open("https://www.youtube.com/@tremolo_truong", '_blank').focus(); //Add the url to your youtube account
+          window.open("https://www.youtube.com/@tremolo_truong", '_blank').focus();
         }
+        else if (id === "pinterest") {
+          window.open("https://www.pinterest.com/", '_blank').focus(); //Add the url to your pinterest account
       }
 
     </script>
